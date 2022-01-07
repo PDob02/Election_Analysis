@@ -11,27 +11,31 @@ file_to_load = os.path.join("Resources", "election_results.csv")
 # Assign a varible to save the file to a path
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
+# 1. Initialize a total vote counter.
+total_votes = 0
+
 # Open the election results and read the file
 #election_data = open(file_to_load, 'r')
 with open(file_to_load) as election_data:
-
-    #To do read and analyze data here.
+#To do read and analyze data here.
     # read the file object with the reader function
     file_reader = csv.reader(election_data)
     
     #print headers row
     headers = next (file_reader)
-    print(headers)
-    #for row in file_reader:
-    #    print(row)
+    #print(headers)
+    for row in file_reader:
+        # 2. Add the total vote count
+        total_votes += 1
+print(total_votes)
 
 #To do: perform analysis
-    print(election_data)
+#print(election_data)
 #Close the file.
 election_data.close()
 
 #create a filename varaible to a direct or indirect path to the file
-file_to_save = os.path.join("analysis","election_analysis.txt")
+#file_to_save = os.path.join("analysis","election_analysis.txt")
 
 with open(file_to_save, "w") as txt_file:
 
