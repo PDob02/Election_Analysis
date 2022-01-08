@@ -4,11 +4,17 @@
 # Add our dependencies.
 import csv
 import os
-
+import pandas as pd
 # Add a variable to load a file from a path.
-file_to_load = os.path.join("..", "Resources", "election_results.csv")
+# file_to_load = os.path.join("..", "Resources", "election_results.csv")
 # Add a variable to save the file to a path.
-file_to_save = os.path.join("analysis", "election_analysis.txt")
+# file_to_save = os.path.join("analysis", "election_analysis.txt")
+
+file_to_load = r'C:\\Users\\patri\Desktop\\Class_Folder\\Election_Analysis\Resources\\election_results.csv'
+file_to_save = r'C:\\Users\\patri\Desktop\\Class_Folder\\Election_Analysis\\analysis\\election_analysis.txt'
+
+df = pd.read_csv(file_to_load)
+
 
 # Initialize a total vote counter.
 total_votes = 0
@@ -18,8 +24,9 @@ candidate_options = []
 candidate_votes = {}
 
 # 1: Create a county list and county votes dictionary.
-candidate_counties = []
-candidates_votes = {}
+counties = []
+county_votes = {}
+total_votes = 0
 
 # Track the winning candidate, vote count and percentage
 winning_candidate = ""
@@ -27,8 +34,8 @@ winning_count = 0
 winning_percentage = 0
 
 # 2: Track the largest county and county voter turnout.
-
-
+largest_county_turnout = ""
+largest_county_votes = 0
 
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
@@ -39,32 +46,53 @@ with open(file_to_load) as election_data:
 
     # For each row in the CSV file.
     for row in reader:
+        print('Row:',row)
+        county = row[1]
+        candidate_options.append("County")
 
-        # Add to the total vote count
-        total_votes = total_votes + 1
+    unique_counties = list(set(candidate_options))
 
-        # Get the candidate name from each row.
-        candidate_name = row[2]
+    for county in unique_counties:
 
-        # 3: Extract the county name from each row.
+        county_votes = len(list(df[df.County == county]))
+        candidate_votes[county] = str(county_votes)
+    
+    print(candidate_votes)
+    
+        # # Add to the total vote count
+        # total_votes = total_votes + 1
 
+        # # Get the candidate name from each row.
+        # candidate_name = row[2]
 
-        # If the candidate does not match any existing candidate add it to
-        # the candidate list
-        if candidate_name not in candidate_options:
+        # # 3: Extract the county name from each row.
+        # if candidate_name not in county_votes:
+        #     # Add the candidate county name to the candidate list
+        #     county_votes.append(candidate_name)
+        # #counties[county_votes] += 1
 
-            # Add the candidate name to the candidate list.
-            candidate_options.append(candidate_name)
+        # # If the candidate does not match any existing candidate add it to
+        # # the candidate list
+        # if candidate_name not in candidate_options:
 
-            # And begin tracking that candidate's voter count.
-            candidate_votes[candidate_name] = 0
+        #     # Add the candidate name to the candidate list.
+        #     candidate_options.append(candidate_name)
 
-        # Add a vote to that candidate's count
-        candidate_votes[candidate_name] += 1
+        #     # And begin tracking that candidate's voter count.
+        #     candidate_votes[candidate_name] = 0
 
-        # 4a: Write an if statement that checks that the
-        # county does not match any existing county in the county list.
+        # # Add a vote to that candidate's count
+        # candidate_votes[candidate_name] += 1
 
+        # # 4a: Write an if statement that checks that the
+        # # county does not match any existing county in the county list.
+        # for counties in candidate_votes:
+        # #2 Retrieve vote count of a candidate
+        #     votes = candidate_votes[counties]
+        # # 3. calculate the percentage of votes
+        #     vote_percentage = float(votes) / float(total_votes) * 100
+        #     candidate_results = (
+        #         f"{counties}: {vote_percentage:.1f}% ({votes:,})\n")
 
             # 4b: Add the existing county to the list of counties.
 
