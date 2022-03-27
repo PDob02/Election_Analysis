@@ -17,17 +17,20 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 The analysis of the election show that:
 - There were 369,711 votes case in the election.
 - The candidates were:
-    - Charles Casper Stockham: 23.0% (85,213)
-    - Diana DeGette: 73.8% (272,892)
-    - Raymon Anthony Doane: 3.1% (11,606)
+    - Charles Casper Stockham
+    - Diana DeGette
+    - Raymon Anthony Doane
 - The candidate results were:
-    - Candidate 1 received "x&" of the vote and "y" number of votes.
-    - Candidate 2 received "x&" of the vote and "y" number of votes.
-    - Candidate 3 received "x&" of the vote and "y" number of votes.
+    - Diana DeGette: 73.8% (272,892)
+    - Charles Casper Stockham: 23.0% (85,213)
+    - Raymon Anthony Doane: 3.1% (11,606)
 - The winnner of the election was:
     - Winner: Diana DeGette
     - Winning Vote Count: 272,892
     - Winning Percentage: 73.8%
+
 ## Challenge Overview
+This challenge had us looping through a large CSV that recorded the three candidates votes by county. We were able to parse out the winner of the election and the counties with the most votes. This was based in Colorado so Denver had the largest turnout. Congratulations to Diana DeGette for winning the election overwhelmingly. 
 
 ## Challenge Summary
+![alt text](https://github.com/PDob02/Election_Analysis/blob/main/County_Challenge.png)
