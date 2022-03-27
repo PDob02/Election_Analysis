@@ -14,18 +14,20 @@ A Colorado Board of Elections employee has given you the following tasks to comp
 -Software: Python 3.7, Visual Studio Code 1.63.2
 
 ## Summary
-The analsyis of the election show that:
-- There were "x" votes case in the election.
+The analysis of the election show that:
+- There were 369,711 votes case in the election.
 - The candidates were:
-    - Candidate 1
-    - Candidate 2
-    - Candidate 3
+    - Charles Casper Stockham: 23.0% (85,213)
+    - Diana DeGette: 73.8% (272,892)
+    - Raymon Anthony Doane: 3.1% (11,606)
 - The candidate results were:
     - Candidate 1 received "x&" of the vote and "y" number of votes.
     - Candidate 2 received "x&" of the vote and "y" number of votes.
     - Candidate 3 received "x&" of the vote and "y" number of votes.
 - The winnner of the election was:
-    - Candidate (1, 2, or 3), who received "x%" of the vote and "y" number of votes.
+    - Winner: Diana DeGette
+    - Winning Vote Count: 272,892
+    - Winning Percentage: 73.8%
 ## Challenge Overview
 
 ## Challenge Summary
